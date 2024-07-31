@@ -1,0 +1,117 @@
+.logo-image{
+    width: 5rem;
+    height: 5rem;
+    margin-top: -0.5rem;
+}
+.logo-center{
+    display: flex;
+    justify-content: space-evenly;
+}
+.news-container {
+    width: 100%;
+    border-radius: 1rem;
+    padding: 20px;
+    background: rgba(245, 245, 245, 0.2); 
+    min-height: 100vh;
+}
+
+.search-bar {
+    margin-bottom: 20px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 5rem;
+
+}
+
+.search-bar input {
+    width: 400px;
+    padding: 15px 20px;
+    font-size: 16px;
+    border: none;
+    border-radius: 25px;
+    outline: none;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    background: #ffffff;
+    transition: all 0.3s ease;
+}
+
+.search-bar input::placeholder {
+    color: #999;
+}
+
+.search-bar input:focus {
+    width: 420px;
+    background: #fdfdfd;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+}
+
+.search-bar button {
+    padding: 15px 25px;
+    font-size: 16px;
+    margin-left: 2rem;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    background: linear-gradient(45deg, #ff6f61, #de4a7e);
+    color: #ffffff;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
+}
+
+.search-bar button:hover {
+    background: linear-gradient(45deg, #de4a7e, #ff6f61);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+}
+
+.search-bar button:active {
+    transform: translateY(1px);
+}
+
+.news-content {
+    display: flex;
+    justify-content: space-between;
+}
+
+.left-column {
+    width: 60%;
+    padding-right: 20px;
+}
+
+.left-column h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: white;
+}
+
+.right-column {
+    width: 40%;
+}
+
+.right-column h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: white;
+}
+
+.pagination-container {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+}
+
+@media (max-width: 768px) {
+    .news-content {
+        flex-direction: column;
+    }
+
+    .left-column, .right-column {
+        width: 100%;
+        padding-right: 0;
+    }
+
+    .search-bar input {
+        width: 100%;
+    }
+}
