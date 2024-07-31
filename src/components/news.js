@@ -42,7 +42,7 @@ const NewsList = () => {
     };
 
     if (loading) return <Atom color="#32cd32" size="medium" text="" textColor="" />;
-    if (error) return <p>Error fetching news: {error}</p>;
+    if (error) return <p className="error-message">Error fetching news: {error}</p>;
 
     const recommendedNews = articles.slice(0, 1);
     const hotNews = articles.slice(1, 4);
@@ -68,19 +68,33 @@ const NewsList = () => {
             <div className="news-content">
                 <div className="left-column">
                     <h2>Recommended News</h2>
-                    {recommendedNews.map((article, index) => (
-                        <NewsCard key={index} article={article} />
-                    ))}
+                    {recommendedNews.length > 0 ? (
+                        recommendedNews.map((article, index) => (
+                            <NewsCard key={index} article={article} />
+                        ))
+                    ) : (
+                        <p className="no-news-message">No recommended news available.</p>
+                    )}
+
                     <h2>Hot News</h2>
-                    {hotNews.map((article, index) => (
-                        <NewsCard key={index} article={article} />
-                    ))}
+                    {hotNews.length > 0 ? (
+                        hotNews.map((article, index) => (
+                            <NewsCard key={index} article={article} />
+                        ))
+                    ) : (
+                        <p className="no-news-message">No hot news available.</p>
+                    )}
                 </div>
+
                 <div className="right-column">
                     <h2>Latest News</h2>
-                    {latestNews.map((article, index) => (
-                        <NewsCard key={index} article={article} />
-                    ))}
+                    {latestNews.length > 0 ? (
+                        latestNews.map((article, index) => (
+                            <NewsCard key={index} article={article} />
+                        ))
+                    ) : (
+                        <p className="no-news-message">No latest news available.</p>
+                    )}
                 </div>
             </div>
         </div>
