@@ -4,12 +4,13 @@ const API_KEY = process.env.REACT_APP_NEWS_API_KEY;
 const BASE_URL = 'https://newsapi.org/v2';
 
 const fetchNews = async (query = '') => {
+  const url = `${BASE_URL}/top-headlines?q=${query}&apiKey=${API_KEY}`;
+  console.log("Fetching from URL:", url); // Log the URL
   try {
-    const url = `${BASE_URL}/top-headlines?country=us&q=${query}&apiKey=${API_KEY}`;
     const response = await axios.get(url);
     return response.data.articles;
   } catch (error) {
-    console.error('Error fetching news:', error);
+    console.error("Error fetching news:", error); // Log the error
     throw error;
   }
 };
